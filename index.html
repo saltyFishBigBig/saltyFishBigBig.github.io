@@ -8,26 +8,20 @@
 </head>
 <body>
    <h2>QQ登录</h2>
-    <span id="qqLoginBtn"></span>
-           <script type="text/javascript">
-                QC.Login({
-                    //btnId：插入按钮的节点id，必选
-                    btnId:"qqLoginBtn",
-                    //用户需要确认的scope授权项，可选，默认all
-                    scope:"all",
-                    //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
-                    size: "B_S"
-                }, function(reqData, opts){//登录成功
-                    //根据返回数据，更换按钮显示状态方法
-                    console.log(reqData);//查看返回数据
-                    QC.Login.getMe(function(openId, accessToken){//获取用户的openId
-                        console.log('QQOPENID:'+openId);
-                        thirdparty(null,null,reqData.figureurl_qq_2,reqData.nickname,1,openId);
-                        QC.Login.signOut();//退出QQ登录调用事件
-                    });
-                }
-            );
-           </script>
-   		<a href="https://graph.qq.com/oauth/show?which=ConfirmPage&display=pc&client_id="101580590" &response_type=token&scope=all&redirect_uri="https://www.xianyuuu.xyz/mmh.html" &scope=get_user_info">
+   <span id="qqLoginBtn"></span>
+       <script type="text/javascript">
+           QC.Login({
+           btnId:"qqLoginBtn"    //插入按钮的节点id
+           });
+    </script>
+    <div>
+        <img style="width: 23px;height: 22px;vertical-align: middle;" src="Connect_logo_1.png" />
+    </div>
+    <a href="https://graph.qq.com/oauth/show?which=ConfirmPage&display=pc&client_id="101580590"&response_type=token&scope=all&redirect_uri="https://www.xianyuuu.xyz/mmh.html"&scope=get_user_info"></a>
+    
+    <!--<button id="qqLoginBtn">登录</button>
+                    <div class="other">
+                        <img style="width: 23px;height: 22px;vertical-align: middle;" src="images/qq.png">
+                    </div> -->
 </body>
 </html>
